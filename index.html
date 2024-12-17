@@ -32,6 +32,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 
+        <script src="https://lockheartlove.netlify.app/javascript/sorttable.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div>
+
         <div id="preloader"></div>
     </head>
 <style>
@@ -52,11 +55,36 @@
             color: var(--bg);
         }
         textarea{
-            width: 17rem;
-            height:2.5rem;
+            width: 13rem;
+            height:5rem;
             padding: 2px 5px;
             border: solid 2px var(--accent);
             border-radius: 5px;
+        }
+        textarea.small{
+            height:2rem
+        }
+        table, th, td {
+            text-align:start;
+            font-family: "Fredoka", sans;
+            border: 1px solid var(--text);
+            padding:0.5rem;
+            border-collapse: collapse;
+        }
+        table{
+            width:28rem;
+            margin: 0px auto;
+        }
+        th{
+            background-color: var(--bg);
+        }
+        .symbol{
+            text-align: center;
+        }
+        svg{
+            width: 1.5rem;
+            margin: -67px 0px -69px;
+            fill:var(--text);
         }
         .tab {
           margin:15px
@@ -91,13 +119,13 @@
                     <ul>
                         <li><a class="tablinks" href='#exp'>Explanation</a></li>
                         <li><a class="tablinks" href='#alt'>Alternative</a></li>
+                        <li><a class="tablinks" href='#list'>Icon List</a></li>
                         <li><a class="tablinks" target="_blank" href='https://github.com/baileylockheart/carrd-icons'>Github</a></li>
                     </ul>
                 </div> 
                 <div id="home" class="home tabcontent">              
                     <h2>Hello!</h2>
-                    <p>I'm making this mini site with the hopes of figuring out a more convenient way to use carrd icons/svg symbols in websites! The currect list of icons I have set up is below, though I'm working on figuring out how to make it works!</p>
-                    <a class="link" target="_blank" href="https://raw.githubusercontent.com/baileylockheart/carrd-icons/refs/heads/main/icons.html"><button style="background-color:var(--accent);">Icons</button></a>
+                    <p>I'm making this mini site with the hopes of figuring out a more convenient way to use carrd icons/svg symbols in websites!</p>
                     <p>Check the Github link for more info :D</p>
                 </div> 
                 <div id="exp" class="tabcontent">              
@@ -106,7 +134,7 @@
                 </div> 
                 <div id="alt" class="tabcontent">              
                     <h2>Alternative</h2>
-                    <p>1. Check the icons file to make sure that it has the icons you want, since I'm still adding to it, and <a href="/icons.html" download>download it</a>.</p>
+                    <p>1. Check the <a href="#list">icon list</a> to make sure that the current file has the icons you want, since I'm still adding to it, and <a href="/icons.html" download>download the file</a>.</p>
                     <p>2. Make sure to put the icons file in the base directory/main folder of your website.</p>
                     <p>3. Next, paste this between the header tags of your website.</p>
                     <textarea><script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div></textarea>
@@ -118,15 +146,224 @@
 </script></textarea>
                     <p>5. Add this to your CSS stylesheet, or in style tags in your HTML. (Please note you'll have to repeat this step on every page if you do the latter.) Tweak it as you see fit upon adding your icons!</p>
 <textarea>svg{
-    min-width: 16px;
-    width: 1.25rem;
-    margin-top:-67px;
-    margin-bottom:-69px;
+    width: 1.5rem;
+    margin: -67px 0px -69px;
     fill:white;
 }</textarea>
-                    <p>6. For each icon, you'll use this format, changing "name" out for whatever the name of the icon is!</p>
-                    <textarea><svg><use xlink:href="#icon-name"></use></svg></textarea>
+                    <p>6. For each icon, you'll use this format, changing "name" out for whatever the name of the icon is! Alternatively, you can copy-paste from the icon list!</p>
+                    <textarea class="small"><svg><use xlink:href="#icon-name"></use></svg></textarea>
                     <p>You'll have to repeat steps 3-4 on each page with icons, but generally, this works as far as I've tried it! My only big issue with this method is that you have to download it, rather than linking to it without said download. I know that might be a plus for some, but I'm aiming for convenience :'D</p>
+                </div> 
+                <div id="list" class="tabcontent">              
+                    <h2>Icon List</h2>
+                    <p>Icons are listed in the order that I added them, but you can click the top of the chart to sort alphabetically!</p>
+                    <table class="sortable">
+                        <tr>
+                          <th class="symbol">Icon</th>
+                          <th>Title</th>
+                          <th>Code</th>
+                        </tr>
+                        <tr class="item">
+                          <td class="symbol"><svg><use xlink:href="#icon-youtube"></use></svg></td>
+                          <td>YouTube</td>
+                          <td><textarea class="small"><svg><use xlink:href="#icon-youtube"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-tiktok"></use></svg></td>
+                            <td>TikTok</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-tiktok"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-insta"></use></svg></td>
+                            <td>Instagram</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-insta"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-twitch"></use></svg></td>
+                            <td>Twitch</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-twitch"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-discord"></use></svg></td>
+                            <td>Discord</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-discord"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-twitter"></use></svg></td>
+                            <td>Twitter</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-twitter"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-threads"></use></svg></td>
+                            <td>Threads</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-threads"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-pinterest"></use></svg></td>
+                            <td>Pinterest</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-pinterest"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-tumblr"></use></svg></td>
+                            <td>Tumblr</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-tumblr"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-bluesky"></use></svg></td>
+                            <td>Bluesky</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-bluesky"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-patreon"></use></svg></td>
+                            <td>Patreon</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-patreon"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-github"></use></svg></td>
+                            <td>Github</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-github"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-telegram"></use></svg></td>
+                            <td>Telegram</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-telegram"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-steam"></use></svg></td>
+                            <td>Steam</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-steam"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-amazon"></use></svg></td>
+                            <td>Amazon</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-amazon"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-itchio"></use></svg></td>
+                            <td>Itch.io</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-itchio"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-scratch"></use></svg></td>
+                            <td>Scratch</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-scratch"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-genshin"></use></svg></td>
+                            <td>Genshin</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-genshin"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-gumroad"></use></svg></td>
+                            <td>Gumroad</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-gumroad"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-toyhouse"></use></svg></td>
+                            <td>Toyhouse</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-toyhouse"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-artfight"></use></svg></td>
+                            <td>Art Fight</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-artfight"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-spotify"></use></svg></td>
+                            <td>Spotify</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-spotify"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-youtube-music"></use></svg></td>
+                            <td>YouTube Music</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-youtube-music"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-apple"></use></svg></td>
+                            <td>Apple</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-apple"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-soundcloud"></use></svg></td>
+                            <td>Soundcloud</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-soundcloud"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-bandlab"></use></svg></td>
+                            <td>Bandlab</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-bandlab"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-amazon-music"></use></svg></td>
+                            <td>Amazon Music</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-amazon-music"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-iheart"></use></svg></td>
+                            <td>iHeart</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-iheart"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-deezer"></use></svg></td>
+                            <td>Deezer</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-deezer"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-lastfm"></use></svg></td>
+                            <td>Last.fm</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-lastfm"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-bandcamp"></use></svg></td>
+                            <td>Bandcamp</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-bandcamp"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-boomplay"></use></svg></td>
+                            <td>Boomplay</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-boomplay"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-tidal"></use></svg></td>
+                            <td>Tidal</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-tidal"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-anghami"></use></svg></td>
+                            <td>Anghami</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-anghami"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-audiomack"></use></svg></td>
+                            <td>Audiomack</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-audiomack"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-yandex"></use></svg></td>
+                            <td>Yandex</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-yandex"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-napster"></use></svg></td>
+                            <td>Napster</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-napster"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-kkbox"></use></svg></td>
+                            <td>KKBox</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-kkbox"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-email"></use></svg></td>
+                            <td>Email</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-email"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-cloud"></use></svg></td>
+                            <td>Cloud</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-cloud"></use></svg></textarea></td>
+                        </tr>
+                    </table>
                 </div> 
             </div>
         </div>
@@ -143,6 +380,9 @@
             var loader = document.getElementById("preloader");
             window.addEventListener("load", function () {
               loader.style.display = "none";
+            });
+            $(function(){
+                $("#icon-holder").load("/icons.html");
             });
         </script>
     </body>
