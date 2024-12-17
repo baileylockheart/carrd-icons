@@ -1,4 +1,4 @@
-# carrd icons???
+# carrd icons??? [![Netlify Status](https://api.netlify.com/api/v1/badges/2d5e7c9a-e892-4a61-b5d3-4185a830fae3/deploy-status)](https://app.netlify.com/sites/carrd-icons/deploys)
 ### HEY. HI, WELCOME IN. WELCOME TO THE STRUGGLE.
 
 I've been making websites for almost two years now, and I initially taught myself how websites are built by browsing through the source code on websites I thought looked interesting. I didn't steal directly, but I learned enough to figure out that twitter has its own meta tags and img means image, y'know? I also looked through the source code of a carrd I had at the time, and that drew my attention to the cute symbols they used. Not images in the way I knew them, but SVG symbols. I used [this website](https://all-icons.carrd.co/) to collect up icons in order to use them for my sites! My music website is probably my best example of this, but certainly not my only one.
