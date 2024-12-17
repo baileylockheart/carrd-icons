@@ -9,19 +9,19 @@
         <meta name="theme-color" content="#21222c">
             
         <!--meta tags-->
-        <meta name="description" content="welcome in!!!"/>
+        <meta name="description" content="Hello!"/>
         <meta property="og:site_name" content="Netlify"/>
         <meta property="og:title" content="Carrd Icons"/>
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="welcome in!!!"/>
-        <meta property="og:image" content="https://raw.githubusercontent.com/baileylockheart/st0rmscribbles/refs/heads/main/general%20art/2024/cat%206-29-2024.PNG"/>
+        <meta property="og:description" content="Hello!"/>
+        <meta property="og:image" content="https://baileylockheart.github.io/images/carrd-icons.png"/>
         <meta property="og:image:height" content="800"/>
         <meta property="og:url" content="https://carrd-icons.netlify.app"/>
             
         <!--and the bird app bc they just have to be special-->
         <meta name="twitter:title" content="Carrd Icons" />
-        <meta name="twitter:image" content="https://raw.githubusercontent.com/baileylockheart/st0rmscribbles/refs/heads/main/general%20art/2024/cat%206-29-2024.PNG">
-        <meta name="twitter:description" content="welcome in!!!">
+        <meta name="twitter:image" content="https://baileylockheart.github.io/images/carrd-icons.png">
+        <meta name="twitter:description" content="Hello!">
         <meta property="twitter:card" content="summary_large_image"/>
             
         <link rel="canonical" href="https://carrd-icons.netlify.app"/>
@@ -47,28 +47,90 @@
             transition: 0.6s ease;
             -webkit-transition: 0.6s ease
         }
-        button:hover{
-          box-shadow: 0px 0px 5px var(--text);
-            transition: all .2s ease-out;
-            transform: scale(1.02); 
+        ::selection {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        textarea{
+            width: 15.5rem;
+            padding: 2px 5px;
+            border: solid 2px var(--accent);
+            border-radius: 5px;
+        }
+        .tab {
+          margin:15px
+        }
+        button:hover {
+          transition: all .2s ease-out;
+          transform: scale(1.05);
+        }
+        .tabcontent {
+          display: none;
+          padding: 10px 0;
+          border-top: none;
+          padding-bottom:15px;
+        } 
+        .tabcontent:target{
+          display:block
+        }
+        .tablinks{
+          text-decoration: none;
+        }
+        @supports selector(:not(:has(+ *))) {
+        body:not(body:has(.tabcontent:target)) .home {
+            display: block;
+          }
         }
     </style>
     <body>
         <div id="container">
             <div id="content">
-                <h1><a style="text-decoration: none;" href="/home.html">Carrd Icons</a></h1>      
+                <h1><a style="text-decoration: none;" class="tablinks" href="#home">Carrd Icons</a></h1>      
                 <div id="nav">
                     <ul>
-                        <li><a target="_blank" href='https://github.com/baileylockheart/carrd-icons'>Github</a></li>
+                        <li><a class="tablinks" href='#exp'>Explanation</a></li>
+                        <li><a class="tablinks" href='#alt'>Alternative</a></li>
+                        <li><a class="tablinks" target="_blank" href='https://github.com/baileylockheart/carrd-icons'>Github</a></li>
                     </ul>
-                </div>                
-                <h2>Hello!</h2>
-                <p>I'm making this mini site with the hopes of figuring out a more convenient way to use carrd icons/svg symbols in websites! The currect list of icons I have set up is below, though I'm working on figuring out how to make it works!</p>
-                <a class="link" target="_blank" href="https://raw.githubusercontent.com/baileylockheart/carrd-icons/refs/heads/main/icons.html"><button style="background-color:var(--accent);">Icons</button></a>
-                <p>Check the Github link for more info :D</p>
+                </div> 
+                <div id="home" class="home tabcontent">              
+                    <h2>Hello!</h2>
+                    <p>I'm making this mini site with the hopes of figuring out a more convenient way to use carrd icons/svg symbols in websites! The currect list of icons I have set up is below, though I'm working on figuring out how to make it works!</p>
+                    <a class="link" target="_blank" href="https://raw.githubusercontent.com/baileylockheart/carrd-icons/refs/heads/main/icons.html"><button style="background-color:var(--accent);">Icons</button></a>
+                    <p>Check the Github link for more info :D</p>
+                </div> 
+                <div id="exp" class="tabcontent">              
+                    <h2>Explanation</h2>
+                    <p>I want to be able to use carrd icons in a way that works similarly to fontawesome, with a simple copy-paste of a short link and a short code for each icon. I know how to do something similar if you have the file locally, which you can check out in the Alternative tab! Still though, I want to be able to link to it more easily, without downloads or taking up a lot of space inline!</p>
+                </div> 
+                <div id="alt" class="tabcontent">              
+                    <h2>Alternative</h2>
+                    <p>1. Check the icons file to make sure that it has the icons you want, since I'm still adding to it, and <a href="/icons.html" download>download it</a>.</p>
+                    <p>2. Make sure to put the icons file in the base directory/main folder of your website.</p>
+                    <p>3. Next, paste this between the header tags of your website.</p>
+                    <textarea style="height:2.2rem"><script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div></textarea>
+                    <p>4. Then, put this at the very end of your website. It should be the last thing before the closing body tag.</p>
+                    <textarea style="height:4.5rem"><script>
+    $(function(){
+    $("#icon-holder").load("/icons.html");
+  });
+</script></textarea>
+                    <p>For each icon, you'll use this format, changing "name" out for whatever the name of the icon is!</p>
+                    <textarea><svg><use xlink:href="#icon-name"></use></svg></textarea>
+                    <p>You'll have to repeat steps 3-4 on each page with icons, but generally, this works as far as I've tried it! My only big issue with this method is that you have to download it, rather than linking to it without said download. I know that might be a plus for some, but I'm aiming for convenience :'D</p>
+                </div> 
             </div>
         </div>
         <script>
+            var hashLinks = document.querySelectorAll("a[href^='#']");
+            [].forEach.call(hashLinks, function (link) {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                history.pushState({}, "", link.href);
+                history.pushState({}, "", link.href);
+                history.back();
+            });
+            });
             var loader = document.getElementById("preloader");
             window.addEventListener("load", function () {
               loader.style.display = "none";
