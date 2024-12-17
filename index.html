@@ -53,6 +53,7 @@
         }
         textarea{
             width: 17rem;
+            height:2.5rem;
             padding: 2px 5px;
             border: solid 2px var(--accent);
             border-radius: 5px;
@@ -108,15 +109,23 @@
                     <p>1. Check the icons file to make sure that it has the icons you want, since I'm still adding to it, and <a href="/icons.html" download>download it</a>.</p>
                     <p>2. Make sure to put the icons file in the base directory/main folder of your website.</p>
                     <p>3. Next, paste this between the header tags of your website.</p>
-                    <textarea style="height:2.7rem"><script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div></textarea>
+                    <textarea><script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div></textarea>
                     <p>4. Then, put this at the very end of your website. It should be the last thing before the closing body tag.</p>
-                    <textarea style="height:4.6rem"><script>
+                    <textarea><script>
     $(function(){
     $("#icon-holder").load("/icons.html");
   });
 </script></textarea>
-                    <p>For each icon, you'll use this format, changing "name" out for whatever the name of the icon is!</p>
-                    <textarea style="height:1rem"><svg><use xlink:href="#icon-name"></use></svg></textarea>
+                    <p>5. Add this to your CSS stylesheet, or in style tags in your HTML. (Please note you'll have to repeat this step on every page if you do the latter.) Tweak it as you see fit upon adding your icons!</p>
+<textarea>svg{
+    min-width: 16px;
+    width: 1.25rem;
+    margin-top:-67px;
+    margin-bottom:-69px;
+    fill:white;
+}</textarea>
+                    <p>6. For each icon, you'll use this format, changing "name" out for whatever the name of the icon is!</p>
+                    <textarea><svg><use xlink:href="#icon-name"></use></svg></textarea>
                     <p>You'll have to repeat steps 3-4 on each page with icons, but generally, this works as far as I've tried it! My only big issue with this method is that you have to download it, rather than linking to it without said download. I know that might be a plus for some, but I'm aiming for convenience :'D</p>
                 </div> 
             </div>
