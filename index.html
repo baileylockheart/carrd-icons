@@ -27,10 +27,6 @@
         <link rel="canonical" href="https://carrd-icons.netlify.app"/>
         <link rel="icon" type="image/x-icon" href="https://em-content.zobj.net/source/whatsapp/401/laptop_1f4bb.png">
         <link rel="stylesheet" type="text/css" href="https://st0rmscribbles.netlify.app/style.css">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
 
         <script src="https://lockheartlove.netlify.app/javascript/sorttable.js"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div>
@@ -86,6 +82,7 @@
             margin: -67px 0px -69px;
             fill:var(--text);
         }
+        footer{padding-bottom: 15px;}
         .tab {
           margin:15px
         }
@@ -127,14 +124,13 @@
                     <ul>
                         <li><a class="tablinks" href='#alt'>Alternative</a></li>
                         <li><a class="tablinks" href='#list'>Icon List</a></li>
-                        <li><a class="tablinks" target="_blank" href='https://github.com/baileylockheart/carrd-icons'>Github</a></li>
                     </ul>
                 </div> 
                 <div id="home" class="home tabcontent">              
                     <h2>Hello!</h2>
                     <p>I'm making this mini site with the hopes of figuring out a more convenient way to use carrd icons/svg symbols in websites!</p>
                     <p>I want to be able to use carrd icons in a way that works similarly to fontawesome, with a simple copy-paste of a short link and a short code for each icon. I know how to do something similar if you have the file locally, which you can check out in the Alternative tab! Still though, I want to be able to link to it more easily, without downloads or taking up a lot of space inline!</p>
-                    <p>Check the Github link for more info :D</p>
+                    <a target="_blank" href="https://github.com/baileylockheart/carrd-icons" style="text-decoration: none;"><button style="background-color: var(--accent);">Github Repository</button></a>
                 </div> 
                 <div id="alt" class="tabcontent">              
                     <h2>Alternative</h2>
@@ -143,7 +139,7 @@
                     <p>3. Next, paste this between the header tags of your website.</p>
                     <textarea style="height:4rem"><script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div></textarea>
                     <p>4. Then, put this at the very end of your website. It should be the last thing before the closing body tag.</p>
-                    <textarea style="height:5.5rem"><script>
+                    <textarea style="height:5.75rem"><script>
     $(function(){
     $("#icon-holder").load("/icons.html");
   });
@@ -425,6 +421,7 @@
                     </table>
                 </div> 
             </div>
+            <footer><p>♡&nbsp;&nbsp;<a href="https://github.com/baileylockheart" target="_blank">Made by Bailey Lockheart</a>&nbsp;&nbsp;♡</p></footer>
         </div>
         <script>
             var hashLinks = document.querySelectorAll("a[href^='#']");
