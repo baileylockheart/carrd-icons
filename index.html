@@ -29,7 +29,7 @@
         <link rel="stylesheet" type="text/css" href="https://st0rmscribbles.netlify.app/style.css">
 
         <script src="https://lockheartlove.netlify.app/javascript/sorttable.js"></script>
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div>
+        <script src="/jquery.js"></script><div id="icon-holder"></div>
 
         <div id="preloader"></div>
     </head>
@@ -68,7 +68,7 @@
             border-collapse: collapse;
         }
         table{
-            width:25rem;
+            width:27rem;
             margin: 0px auto;
         }
         th{
@@ -284,9 +284,19 @@
                             <td><textarea class="small"><svg><use xlink:href="#icon-kofi"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-artistree"></use></svg></td>
+                            <td>Artistree</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-artistree"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-coffee"></use></svg></td>
                             <td>Buy Me a Coffee</td>
                             <td><textarea class="small"><svg><use xlink:href="#icon-coffee"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-coffee-alt"></use></svg></td>
+                            <td>Buy Me a Coffee (Alt)</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-coffee-alt"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-redbubble"></use></svg></td>
@@ -337,6 +347,11 @@
                             <td class="symbol"><svg><use xlink:href="#icon-gitlab"></use></svg></td>
                             <td>Gitlab</td>
                             <td><textarea class="small"><svg><use xlink:href="#icon-gitlab"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-jsfiddle"></use></svg></td>
+                            <td>JSFiddle</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-jsfiddle"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-codepen"></use></svg></td>
@@ -442,6 +457,11 @@
                             <td class="symbol"><svg><use xlink:href="#icon-genshin"></use></svg></td>
                             <td>Genshin</td>
                             <td><textarea class="small"><svg><use xlink:href="#icon-genshin"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-hsr"></use></svg></td>
+                            <td>Honkai Star Rail</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-hsr"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-hoyo"></use></svg></td>
@@ -619,6 +639,11 @@
                             <td><textarea class="small"><svg><use xlink:href="#icon-crunchyroll"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-anilist"></use></svg></td>
+                            <td>AniList</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-anilist"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-animeplanet"></use></svg></td>
                             <td>Anime Planet</td>
                             <td><textarea class="small"><svg><use xlink:href="#icon-animeplanet"></use></svg></textarea></td>
@@ -637,6 +662,11 @@
                             <td class="symbol"><svg><use xlink:href="#icon-gamepad"></use></svg></td>
                             <td>Gamepad</td>
                             <td><textarea class="small"><svg><use xlink:href="#icon-gamepad"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-mobile"></use></svg></td>
+                            <td>Mobile Phone</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-mobile"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-cloud"></use></svg></td>
@@ -664,6 +694,16 @@
                             <td><textarea class="small"><svg><use xlink:href="#icon-user"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-info"></use></svg></td>
+                            <td>Information</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-info"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-calendar"></use></svg></td>
+                            <td>Calendar</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-calendar"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-home"></use></svg></td>
                             <td>Home</td>
                             <td><textarea class="small"><svg><use xlink:href="#icon-home"></use></svg></textarea></td>
@@ -674,14 +714,34 @@
                             <td><textarea class="small"><svg><use xlink:href="#icon-cart"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-feed"></use></svg></td>
+                            <td>Feed</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-feed"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-email"></use></svg></td>
                             <td>Email</td>
                             <td><textarea class="small"><svg><use xlink:href="#icon-email"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-pdf"></use></svg></td>
+                            <td>PDF</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-pdf"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-upload"></use></svg></td>
+                            <td>Upload</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-upload"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-download"></use></svg></td>
                             <td>Download</td>
                             <td><textarea class="small"><svg><use xlink:href="#icon-download"></use></svg></textarea></td>
+                        </tr>
+                        <tr class="item">
+                            <td class="symbol"><svg><use xlink:href="#icon-qr"></use></svg></td>
+                            <td>QR Code</td>
+                            <td><textarea class="small"><svg><use xlink:href="#icon-qr"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
                             <td class="symbol"><svg><use xlink:href="#icon-link"></use></svg></td>
