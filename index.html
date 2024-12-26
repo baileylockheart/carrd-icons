@@ -29,11 +29,11 @@
         <link rel="stylesheet" type="text/css" href="https://st0rmscribbles.netlify.app/style.css">
 
         <script src="https://lockheartlove.netlify.app/javascript/sorttable.js"></script>
-        <script src="/jquery.js"></script><div id="icon-holder"></div>
+        <script id="allIcons" src="/icons.js"></script>
 
         <div id="preloader"></div>
     </head>
-<style>
+    <style>
       :root{
             --bg:#21222c;
             --text:#f8f8f2;
@@ -58,7 +58,7 @@
             border-radius: 5px;
         }
         textarea.small{
-            height:2rem
+            height:3rem
         }
         table, th, td {
             text-align:start;
@@ -77,7 +77,7 @@
         .symbol{
             text-align: center;
         }
-        svg{
+        svg.carrdicons{
             width: 1.5rem;
             margin: -67px 0px -69px;
             fill:var(--text);
@@ -122,6 +122,7 @@
                 <h1><a style="text-decoration: none;" class="tablinks" href="#home">Carrd Icons</a></h1>      
                 <div id="nav">
                     <ul>
+                        <li><a class="tablinks" href='#usage'>Usage</a></li>
                         <li><a class="tablinks" href='#local'>Local</a></li>
                         <li><a class="tablinks" href='#list'>Icon List</a></li>
                     </ul>
@@ -129,14 +130,30 @@
                 <div id="home" class="home tabcontent">              
                     <h2>Hello!</h2>
                     <p>I'm making this mini site with the hopes of figuring out a more convenient way to use carrd icons/svg symbols in websites!</p>
-                    <p>I want to be able to use carrd icons in a way that works similarly to fontawesome, with a simple copy-paste of a short link and a short code for each icon. I know how to do something similar if you have the file locally, which you can check out in the "Local" tab! Still though, I want to be able to link to it more easily, without downloads or taking up a lot of space inline!</p>
+                    <p>With this, you can use Carrd icons in a way that works similarly to fontawesome, with a simple copy-paste of a short link and a short code for each icon! If you'd like to use this quickly and easily, check out the <a href="#usage">usage</a> tab! If you'd like a more complex but local way to use it, check the <a href="#local">local</a> tab!</p>
+                    <p>Finally, if you'd like to suggest any changes or learn more about this, check out the repo! This little project is open-source, so feel free to look through it!</p>
                     <a target="_blank" href="https://github.com/baileylockheart/carrd-icons" style="text-decoration: none;"><button style="background-color: var(--accent);">Github Repository</button></a>
                 </div> 
+                <div id="usage" class="tabcontent">
+                    <h2>How to Use</h2>
+                    <p>1. Check the <a href="#list">icon list</a> to make sure that the current file has the icons you want, since I'm still adding to it.</p>
+                    <p>2. Paste this between the head tags of your website.</p>
+                    <textarea style="height:4rem"><script id="allIcons" src="https://carrd-icons.netlify.app/icons.js"></script></textarea>
+                    <p>3. Add this to your CSS stylesheet, or in style tags in your HTML. (Please note you'll have to repeat this step on every page if you do the latter.) Tweak it as you see fit upon adding your icons!</p>
+<textarea>svg.carrdicons{
+    width: 1.5rem;
+    margin: -67px 0px -69px;
+    fill:white;
+}</textarea>
+                    <p>4. For each icon, you'll use this format, changing "name" out for whatever the name of the icon is! Alternatively, you can copy-paste from the icon list!</p>
+                    <textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-name"></use></svg></textarea>
+                    <p>And that's it! You can download the javascript file for a simple local version, but the other solution still works as well. This works as far as I've tested it, and I'm very happy with it!</p>
+                </div>
                 <div id="local" class="tabcontent">              
                     <h2>Local Version</h2>
                     <p>1. Check the <a href="#list">icon list</a> to make sure that the current file has the icons you want, since I'm still adding to it, and <a href="/icons.html" download>download the file</a>.</p>
                     <p>2. Make sure to put the icons file in the base directory/main folder of your website.</p>
-                    <p>3. Next, paste this between the header tags of your website.</p>
+                    <p>3. Next, paste this between the head tags of your website.</p>
                     <textarea style="height:4rem"><script src="https://code.jquery.com/jquery-1.10.2.js"></script><div id="icon-holder"></div></textarea>
                     <p>4. Then, put this at the very end of your website. It should be the last thing before the closing body tag.</p>
                     <textarea style="height:5.75rem"><script>
@@ -145,14 +162,14 @@
   });
 </script></textarea>
                     <p>5. Add this to your CSS stylesheet, or in style tags in your HTML. (Please note you'll have to repeat this step on every page if you do the latter.) Tweak it as you see fit upon adding your icons!</p>
-<textarea>svg{
+<textarea>svg.carrdicons{
     width: 1.5rem;
     margin: -67px 0px -69px;
     fill:white;
 }</textarea>
                     <p>6. For each icon, you'll use this format, changing "name" out for whatever the name of the icon is! Alternatively, you can copy-paste from the icon list!</p>
-                    <textarea class="small"><svg><use xlink:href="#icon-name"></use></svg></textarea>
-                    <p>You'll have to repeat steps 3-4 on each page with icons, but generally, this works as far as I've tried it! My only big issue with this method is that you have to download it, rather than linking to it without said download. I know that might be a plus for some, but I'm aiming for convenience :'D</p>
+                    <textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-name"></use></svg></textarea>
+                    <p>You'll have to repeat steps 3-4 on each page with icons, but generally, this works as far as I've tried it! This method's a bit convoluted, so I'd suggest the other one, but it does work and will be kept up-to-date with the other method!</p>
                 </div> 
                 <div id="list" class="tabcontent">              
                     <h2>Icon List</h2>
@@ -164,724 +181,724 @@
                           <th>Code</th>
                         </tr>
                         <tr class="item">
-                          <td class="symbol"><svg><use xlink:href="#icon-youtube"></use></svg></td>
+                          <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-youtube"></use></svg></td>
                           <td>YouTube</td>
-                          <td><textarea class="small"><svg><use xlink:href="#icon-youtube"></use></svg></textarea></td>
+                          <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-youtube"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-tiktok"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-tiktok"></use></svg></td>
                             <td>TikTok</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-tiktok"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-tiktok"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-insta"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-insta"></use></svg></td>
                             <td>Instagram</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-insta"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-insta"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-facebook"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-facebook"></use></svg></td>
                             <td>Facebook</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-facebook"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-facebook"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-snapchat"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-snapchat"></use></svg></td>
                             <td>Snapchat</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-snapchat"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-snapchat"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-bereal"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-bereal"></use></svg></td>
                             <td>BeReal</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-bereal"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-bereal"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-twitch"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-twitch"></use></svg></td>
                             <td>Twitch</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-twitch"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-twitch"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-discord"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-discord"></use></svg></td>
                             <td>Discord</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-discord"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-discord"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-reddit"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-reddit"></use></svg></td>
                             <td>Reddit</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-reddit"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-reddit"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-pinterest"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-pinterest"></use></svg></td>
                             <td>Pinterest</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-pinterest"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-pinterest"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-twitter"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-twitter"></use></svg></td>
                             <td>Twitter</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-twitter"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-twitter"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-x"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-x"></use></svg></td>
                             <td>X</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-x"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-x"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-threads"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-threads"></use></svg></td>
                             <td>Threads</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-threads"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-threads"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-bluesky"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-bluesky"></use></svg></td>
                             <td>Bluesky</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-bluesky"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-bluesky"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-mastadon"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-mastadon"></use></svg></td>
                             <td>Mastadon</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-mastadon"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-mastadon"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-fediverse"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-fediverse"></use></svg></td>
                             <td>Fediverse</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-fediverse"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-fediverse"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-pixelfed"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-pixelfed"></use></svg></td>
                             <td>Pixelfed</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-pixelfed"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-pixelfed"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-tumblr"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-tumblr"></use></svg></td>
                             <td>Tumblr</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-tumblr"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-tumblr"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-blogger"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-blogger"></use></svg></td>
                             <td>Blogger</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-blogger"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-blogger"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-mailchimp"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-mailchimp"></use></svg></td>
                             <td>Mailchimp</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-mailchimp"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-mailchimp"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-dreamwidth"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-dreamwidth"></use></svg></td>
                             <td>Dreamwidth</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-dreamwidth"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-dreamwidth"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-spacehey"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-spacehey"></use></svg></td>
                             <td>Spacehey</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-spacehey"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-spacehey"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-neocities"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-neocities"></use></svg></td>
                             <td>Neocities</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-neocities"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-neocities"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-carrd"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-carrd"></use></svg></td>
                             <td>Carrd</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-carrd"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-carrd"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-linktree"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-linktree"></use></svg></td>
                             <td>Linktree</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-linktree"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-linktree"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-pronounspage"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-pronounspage"></use></svg></td>
                             <td>Pronouns.page</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-pronounspage"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-pronounspage"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-patreon"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-patreon"></use></svg></td>
                             <td>Patreon</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-patreon"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-patreon"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-patreon-alt"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-patreon-alt"></use></svg></td>
                             <td>Patreon (Alt)</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-patreon-alt"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-patreon-alt"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-kofi"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-kofi"></use></svg></td>
                             <td>Kofi</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-kofi"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-kofi"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-coffee"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-coffee"></use></svg></td>
                             <td>Buy Me a Coffee</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-coffee"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-coffee"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-coffee-alt"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-coffee-alt"></use></svg></td>
                             <td>Buy Me a Coffee (Alt)</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-coffee-alt"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-coffee-alt"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-artistree"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-artistree"></use></svg></td>
                             <td>Artistree</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-artistree"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-artistree"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-gumroad"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-gumroad"></use></svg></td>
                             <td>Gumroad</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-gumroad"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-gumroad"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-redbubble"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-redbubble"></use></svg></td>
                             <td>RedBubble</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-redbubble"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-redbubble"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-shopify"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-shopify"></use></svg></td>
                             <td>Shopify</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-shopify"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-shopify"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-shopee"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-shopee"></use></svg></td>
                             <td>Shopee</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-shopee"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-shopee"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-etsy"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-etsy"></use></svg></td>
                             <td>Etsy</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-etsy"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-etsy"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-mercari"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-mercari"></use></svg></td>
                             <td>Mercari</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-mercari"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-mercari"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-ebay"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-ebay"></use></svg></td>
                             <td>Ebay</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-ebay"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-ebay"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-amazon"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-amazon"></use></svg></td>
                             <td>Amazon</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-amazon"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-amazon"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-throne"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-throne"></use></svg></td>
                             <td>Throne</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-throne"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-throne"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-paypal"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-paypal"></use></svg></td>
                             <td>PayPal</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-paypal"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-paypal"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-cashapp"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-cashapp"></use></svg></td>
                             <td>Cash App</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-cashapp"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-cashapp"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-venmo"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-venmo"></use></svg></td>
                             <td>Venmo</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-venmo"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-venmo"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-zelle"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-zelle"></use></svg></td>
                             <td>Zelle</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-zelle"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-zelle"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-canva"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-canva"></use></svg></td>
                             <td>Canva</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-canva"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-canva"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-procreate"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-procreate"></use></svg></td>
                             <td>Procreate</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-procreate"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-procreate"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-github"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-github"></use></svg></td>
                             <td>Github</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-github"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-github"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-gitlab"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-gitlab"></use></svg></td>
                             <td>Gitlab</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-gitlab"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-gitlab"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-jsfiddle"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-jsfiddle"></use></svg></td>
                             <td>JSFiddle</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-jsfiddle"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-jsfiddle"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-codepen"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-codepen"></use></svg></td>
                             <td>Codepen</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-codepen"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-codepen"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-stackoverflow"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-stackoverflow"></use></svg></td>
                             <td>Stack Overflow</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-stackoverflow"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-stackoverflow"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-scratch"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-scratch"></use></svg></td>
                             <td>Scratch</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-scratch"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-scratch"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-obsidian"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-obsidian"></use></svg></td>
                             <td>Obsidian</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-obsidian"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-obsidian"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-evernote"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-evernote"></use></svg></td>
                             <td>Evernote</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-evernote"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-evernote"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-notion"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-notion"></use></svg></td>
                             <td>Notion</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-notion"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-notion"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-trello"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-trello"></use></svg></td>
                             <td>Trello</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-trello"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-trello"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-linkedin"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-linkedin"></use></svg></td>
                             <td>LinkedIn</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-linkedin"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-linkedin"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-drive"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-drive"></use></svg></td>
                             <td>Drive</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-drive"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-drive"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-dropbox"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-dropbox"></use></svg></td>
                             <td>Dropbox</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-dropbox"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-dropbox"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-onedrive"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-onedrive"></use></svg></td>
                             <td>OneDrive</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-onedrive"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-onedrive"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-telegram"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-telegram"></use></svg></td>
                             <td>Telegram</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-telegram"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-telegram"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-signal"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-signal"></use></svg></td>
                             <td>Signal</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-signal"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-signal"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-whatsapp"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-whatsapp"></use></svg></td>
                             <td>Whatsapp</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-whatsapp"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-whatsapp"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-switch"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-switch"></use></svg></td>
                             <td>Switch</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-switch"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-switch"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-xbox"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-xbox"></use></svg></td>
                             <td>Xbox</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-xbox"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-xbox"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-steam"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-steam"></use></svg></td>
                             <td>Steam</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-steam"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-steam"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-gamejolt"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-gamejolt"></use></svg></td>
                             <td>Game Jolt</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-gamejolt"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-gamejolt"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-itchio"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-itchio"></use></svg></td>
                             <td>Itch.io</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-itchio"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-itchio"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-itchio-alt"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-itchio-alt"></use></svg></td>
                             <td>Itch.io (Alt)</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-itchio-alt"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-itchio-alt"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-epicgames"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-epicgames"></use></svg></td>
                             <td>Epic Games</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-epicgames"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-epicgames"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-valorant"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-valorant"></use></svg></td>
                             <td>Valorant</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-valorant"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-valorant"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-battlenet"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-battlenet"></use></svg></td>
                             <td>Battle.net</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-battlenet"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-battlenet"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-roblox"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-roblox"></use></svg></td>
                             <td>Roblox</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-roblox"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-roblox"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-minecraft"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-minecraft"></use></svg></td>
                             <td>Minecraft</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-minecraft"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-minecraft"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-vrchat"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-vrchat"></use></svg></td>
                             <td>VR Chat</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-vrchat"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-vrchat"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-vrchat-alt"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-vrchat-alt"></use></svg></td>
                             <td>VR Chat (Alt)</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-vrchat-alt"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-vrchat-alt"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-overwatch"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-overwatch"></use></svg></td>
                             <td>Overwatch</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-overwatch"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-overwatch"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-genshin"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-genshin"></use></svg></td>
                             <td>Genshin</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-genshin"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-genshin"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-hsr"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-hsr"></use></svg></td>
                             <td>Honkai Star Rail</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-hsr"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-hsr"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-honkai"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-honkai"></use></svg></td>
                             <td>Honkai Impact 3rd</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-honkai"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-honkai"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-hoyo"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-hoyo"></use></svg></td>
                             <td>HoyoLab</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-hoyo"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-hoyo"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-artfight"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-artfight"></use></svg></td>
                             <td>Art Fight</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-artfight"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-artfight"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-toyhouse"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-toyhouse"></use></svg></td>
                             <td>Toyhouse</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-toyhouse"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-toyhouse"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-cara"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-cara"></use></svg></td>
                             <td>Cara</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-cara"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-cara"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-artstreet"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-artstreet"></use></svg></td>
                             <td>Art Street</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-artstreet"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-artstreet"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-deviantart"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-deviantart"></use></svg></td>
                             <td>Deviantart</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-deviantart"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-deviantart"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-artfol"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-artfol"></use></svg></td>
                             <td>Artfol</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-artfol"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-artfol"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-furaffinity"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-furaffinity"></use></svg></td>
                             <td>Fur Affinity</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-furaffinity"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-furaffinity"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-curiouscat"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-curiouscat"></use></svg></td>
                             <td>Curious Cat</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-curiouscat"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-curiouscat"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-tellonym"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-tellonym"></use></svg></td>
                             <td>Tellonym</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-tellonym"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-tellonym"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-ao3"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-ao3"></use></svg></td>
                             <td>Archive of our Own</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-ao3"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-ao3"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-wattpad"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-wattpad"></use></svg></td>
                             <td>Wattpad</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-wattpad"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-wattpad"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-fanfiction"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-fanfiction"></use></svg></td>
                             <td>FanFiction.net</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-fanfiction"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-fanfiction"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-webtoon"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-webtoon"></use></svg></td>
                             <td>Webtoon</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-webtoon"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-webtoon"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-tapas"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-tapas"></use></svg></td>
                             <td>Tapas</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-tapas"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-tapas"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-crunchyroll"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-crunchyroll"></use></svg></td>
                             <td>Crunchyroll</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-crunchyroll"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-crunchyroll"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-anilist"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-anilist"></use></svg></td>
                             <td>AniList</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-anilist"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-anilist"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-animeplanet"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-animeplanet"></use></svg></td>
                             <td>Anime Planet</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-animeplanet"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-animeplanet"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-myanimelist"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-myanimelist"></use></svg></td>
                             <td>MyAnimeList</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-myanimelist"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-myanimelist"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-mydramalist"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-mydramalist"></use></svg></td>
                             <td>MyDramaList</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-mydramalist"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-mydramalist"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-spotify"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-spotify"></use></svg></td>
                             <td>Spotify</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-spotify"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-spotify"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-youtubemusic"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-youtubemusic"></use></svg></td>
                             <td>YouTube Music</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-youtubemusic"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-youtubemusic"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-apple"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-apple"></use></svg></td>
                             <td>Apple</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-apple"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-apple"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-soundcloud"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-soundcloud"></use></svg></td>
                             <td>Soundcloud</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-soundcloud"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-soundcloud"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-bandlab"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-bandlab"></use></svg></td>
                             <td>Bandlab</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-bandlab"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-bandlab"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-amazonmusic"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-amazonmusic"></use></svg></td>
                             <td>Amazon Music</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-amazonmusic"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-amazonmusic"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-iheart"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-iheart"></use></svg></td>
                             <td>iHeartRadio</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-iheart"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-iheart"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-deezer"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-deezer"></use></svg></td>
                             <td>Deezer</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-deezer"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-deezer"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-deezer-alt"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-deezer-alt"></use></svg></td>
                             <td>Deezer (Alt)</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-deezer-alt"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-deezer-alt"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-pandora"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-pandora"></use></svg></td>
                             <td>Pandora</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-pandora"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-pandora"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-lastfm"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-lastfm"></use></svg></td>
                             <td>Last.fm</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-lastfm"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-lastfm"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-bandcamp"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-bandcamp"></use></svg></td>
                             <td>Bandcamp</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-bandcamp"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-bandcamp"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-boomplay"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-boomplay"></use></svg></td>
                             <td>Boomplay</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-boomplay"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-boomplay"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-tidal"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-tidal"></use></svg></td>
                             <td>Tidal</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-tidal"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-tidal"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-anghami"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-anghami"></use></svg></td>
                             <td>Anghami</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-anghami"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-anghami"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-audiomack"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-audiomack"></use></svg></td>
                             <td>Audiomack</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-audiomack"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-audiomack"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-yandex"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-yandex"></use></svg></td>
                             <td>Yandex</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-yandex"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-yandex"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-napster"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-napster"></use></svg></td>
                             <td>Napster</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-napster"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-napster"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-kkbox"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-kkbox"></use></svg></td>
                             <td>KKBox</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-kkbox"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-kkbox"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-gamepad"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-gamepad"></use></svg></td>
                             <td>Gamepad</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-gamepad"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-gamepad"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-phone"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-phone"></use></svg></td>
                             <td>Phone</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-phone"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-phone"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-mobile"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-mobile"></use></svg></td>
                             <td>Mobile Phone</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-mobile"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-mobile"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-cloud"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-cloud"></use></svg></td>
                             <td>Cloud</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-cloud"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-cloud"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-paw"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-paw"></use></svg></td>
                             <td>Paw</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-paw"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-paw"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-heart"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-heart"></use></svg></td>
                             <td>Heart</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-heart"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-heart"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-star"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-star"></use></svg></td>
                             <td>Star</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-star"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-star"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-user"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-user"></use></svg></td>
                             <td>User</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-user"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-user"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-search"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-search"></use></svg></td>
                             <td>Search</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-search"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-search"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-info"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-info"></use></svg></td>
                             <td>Information</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-info"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-info"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-calendar"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-calendar"></use></svg></td>
                             <td>Calendar</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-calendar"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-calendar"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-home"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-home"></use></svg></td>
                             <td>Home</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-home"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-home"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-plane"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-plane"></use></svg></td>
                             <td>Plane</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-plane"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-plane"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-globe"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-globe"></use></svg></td>
                             <td>Globe</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-globe"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-globe"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-location"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-location"></use></svg></td>
                             <td>Location</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-location"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-location"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-cart"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-cart"></use></svg></td>
                             <td>Cart</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-cart"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-cart"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-feed"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-feed"></use></svg></td>
                             <td>Feed</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-feed"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-feed"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-email"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-email"></use></svg></td>
                             <td>Email</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-email"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-email"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-document"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-document"></use></svg></td>
                             <td>Document</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-document"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-document"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-pdf"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-pdf"></use></svg></td>
                             <td>PDF</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-pdf"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-pdf"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-upload"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-upload"></use></svg></td>
                             <td>Upload</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-upload"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-upload"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-download"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-download"></use></svg></td>
                             <td>Download</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-download"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-download"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-qr"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-qr"></use></svg></td>
                             <td>QR Code</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-qr"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-qr"></use></svg></textarea></td>
                         </tr>
                         <tr class="item">
-                            <td class="symbol"><svg><use xlink:href="#icon-link"></use></svg></td>
+                            <td class="symbol"><svg class="carrdicons"><use xlink:href="#icon-link"></use></svg></td>
                             <td>Link</td>
-                            <td><textarea class="small"><svg><use xlink:href="#icon-link"></use></svg></textarea></td>
+                            <td><textarea class="small"><svg class="carrdicons"><use xlink:href="#icon-link"></use></svg></textarea></td>
                         </tr>
                     </table>
                 </div> 
@@ -901,9 +918,6 @@
             var loader = document.getElementById("preloader");
             window.addEventListener("load", function () {
               loader.style.display = "none";
-            });
-            $(function(){
-                $("#icon-holder").load("/icons.htm");
             });
         </script>
     </body>
